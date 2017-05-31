@@ -1,0 +1,38 @@
+@ECHO OFF
+
+SET SRC_INC_CHSET_DIR=.\libchset\include
+SET SRC_INC_ICONV_DIR=.\libiconv\include
+
+SET SRC_DBG_x86_DIR=.\Debug x86 Static
+SET SRC_REL_x86_DIR=.\Release x86 Static
+SET SRC_DBG_x64_DIR=.\x64\Debug x64 Static
+SET SRC_REL_x64_DIR=.\x64\Release x64 Static
+
+SET LIB_DEST_x86_DIR=D:\Project\Common\Lib\External_Lib\libiconv\x86
+SET LIB_DEST_x64_DIR=D:\Project\Common\Lib\External_Lib\libiconv\x64
+
+SET	INCDIR=\include
+SET LIBDIR=\lib
+
+SET COPYOPT=/K /R /Y
+
+
+REM -- COPY headers
+XCOPY "%SRC_INC_CHSET_DIR%\libcharset.h"	%LIB_DEST_x86_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_CHSET_DIR%\localcharset.h"	%LIB_DEST_x86_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_ICONV_DIR%\config.h"		%LIB_DEST_x86_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_ICONV_DIR%\iconv.h"			%LIB_DEST_x86_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_CHSET_DIR%\libcharset.h"	%LIB_DEST_x64_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_CHSET_DIR%\localcharset.h"	%LIB_DEST_x64_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_ICONV_DIR%\config.h"		%LIB_DEST_x64_DIR%%INCDIR% %COPYOPT%
+XCOPY "%SRC_INC_ICONV_DIR%\iconv.h"			%LIB_DEST_x64_DIR%%INCDIR% %COPYOPT%
+
+REM -- COPY libraries
+XCOPY "%SRC_DBG_x86_DIR%\libchset_d.lib"	%LIB_DEST_x86_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_DBG_x86_DIR%\libiconv_d.lib"	%LIB_DEST_x86_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_REL_x86_DIR%\libchset_o.lib"	%LIB_DEST_x86_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_REL_x86_DIR%\libiconv_o.lib"	%LIB_DEST_x86_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_DBG_x64_DIR%\libchset_d.lib"	%LIB_DEST_x64_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_DBG_x64_DIR%\libiconv_d.lib"	%LIB_DEST_x64_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_REL_x64_DIR%\libchset_o.lib"	%LIB_DEST_x64_DIR%%LIBDIR% %COPYOPT%
+XCOPY "%SRC_REL_x64_DIR%\libiconv_o.lib"	%LIB_DEST_x64_DIR%%LIBDIR% %COPYOPT%
