@@ -96,7 +96,7 @@ $(DLLNAME):	tif_config.h tiffconf.h libtiff.def $(OBJ)
 clean:
 	-del tif_config.h tiffconf.h
 	-del *.obj
-	-del *.lib
+	-del libtiff_i.lib
 	-del *.dll
 	-del *.exe
 	-del *.pdb

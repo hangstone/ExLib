@@ -29,7 +29,7 @@
 
 !INCLUDE nmake.opt
 
-all:	port lib tools
+all:	port lib #tools
 
 port::
 	cd port
@@ -38,7 +38,7 @@ port::
 
 lib:	port
 	cd libtiff
-	$(MAKE) /f Makefile.vc
+	$(MAKE) /f Makefile_x64_dbg.vc
 	cd..
 
 tools:	lib

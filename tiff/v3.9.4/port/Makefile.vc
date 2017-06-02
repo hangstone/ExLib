@@ -39,5 +39,4 @@ libport.lib:	$(OBJ)
 
 clean:
 	-del *.obj
-	-del *.lib
 
