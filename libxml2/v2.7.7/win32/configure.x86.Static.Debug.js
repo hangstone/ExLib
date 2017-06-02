@@ -606,7 +606,7 @@ if (withPython == true) {
 
 // Create the makefile.
 var fso = new ActiveXObject("Scripting.FileSystemObject");
-var makefile = ".\\Makefile.msvc";
+var makefile = ".\\Makefile.x86.Static.Debug.msvc";
 if (compiler == "mingw")
 	makefile = ".\\Makefile.mingw";
 else if (compiler == "bcb")

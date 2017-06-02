@@ -69,10 +69,10 @@ LIBS =
 LIBS = $(LIBS) wsock32.lib ws2_32.lib
 !endif 
 !if "$(WITH_ICONV)" == "1"
-LIBS = $(LIBS) iconv.lib
+LIBS = $(LIBS) libchset_o.lib libiconv_o.lib
 !endif 
 !if "$(WITH_ZLIB)" == "1"
-LIBS = $(LIBS) zdll.lib
+LIBS = $(LIBS) zlib_o.lib
 !endif
 !if "$(WITH_THREADS)" == "posix"
 LIBS = $(LIBS) pthreadVC.lib
@@ -91,7 +91,7 @@ CFLAGS = $(CFLAGS) /D "_DEBUG" /Od /Z7
 LDFLAGS = $(LDFLAGS) /DEBUG
 !else
 CFLAGS = $(CFLAGS) /D "NDEBUG" /O2 
-LDFLAGS = $(LDFLAGS) /OPT:NOWIN98
+LDFLAGS = $(LDFLAGS) /NDEBUG
 !endif
 
 # Libxml object files.
