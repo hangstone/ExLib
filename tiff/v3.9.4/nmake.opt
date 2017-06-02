@@ -114,8 +114,12 @@ CHECK_JPEG_YCBCR_SUBSAMPLING = 1
 # with no debugging information.
 # NOTE: /EHsc option required if you want to build the C++ stream API
 #
-OPTFLAGS =	/Ox /MD /EHsc /W3 /D_CRT_SECURE_NO_DEPRECATE
-#OPTFLAGS = 	/Zi 
+!IFDEF DEBUG
+OPTFLAGS = 	/Od /EHsc /RTC1 /MDd /Z7 /W2
+!ELSE
+OPTFLAGS =	/O2 /EHsc /MD /W2 /D NDEBUG /D_CRT_SECURE_NO_DEPRECATE
+!ENDIF
+
 
 #
 # Uncomment following line to enable using Windows Common RunTime Library
